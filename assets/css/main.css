@@ -668,7 +668,18 @@ body {
   color: rgba(0, 0, 0, 0.7);
   background-color: #fff;
   height: 100%;
+  overflow: hidden;
   line-height: 1.5; }
+
+/* SCROLL BAR STYLES */
+#wrapper::-webkit-scrollbar {
+  width: 9px; }
+
+#wrapper::-webkit-scrollbar-thumb {
+  background-color: #111111; }
+
+#wrapper::-webkit-scrollbar-track {
+  background-color: #1b1b1b; }
 
 a {
   text-decoration: none;
@@ -701,7 +712,11 @@ article.io-single_article .container-fluid {
 
 #wrapper.io-page_wrapper {
   position: relative;
-  top: 50px; }
+  top: 50px;
+  height: calc(100% - 50px);
+  overflow-y: scroll;
+  border-left: 9px solid #111111;
+  border-bottom: 9px solid #111111; }
 
 h1, h2, h3, h4, h5 {
   font-weight: 600;
@@ -1037,6 +1052,7 @@ nav.io-main_nav {
 
 .io-nav--panel {
   position: fixed;
+  z-index: 9;
   bottom: 0;
   left: 50%;
   width: 56%;
@@ -1088,10 +1104,10 @@ nav.io-main_nav {
 .io-section--01 {
   height: 100%;
   width: 100%;
-  padding-top: 230px;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  padding-bottom: 41px;
   -webkit-align-items: center;
       -ms-flex-align: center;
           align-items: center;
